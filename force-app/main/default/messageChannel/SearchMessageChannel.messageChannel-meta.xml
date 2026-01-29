@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send search text between components</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>User entered search text</description>
+        <fieldName>searchText</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Search Message Channel</masterLabel>
+</LightningMessageChannel>

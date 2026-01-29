@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Math Operation Channel</masterLabel>
+    <description>Math operation message channel</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <fieldName>operation</fieldName>
+        <description>Add / Subtract / Multiply</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>value</fieldName>
+        <description>Input numeric value</description>
+    </lightningMessageFields>
+</MessageChannel>

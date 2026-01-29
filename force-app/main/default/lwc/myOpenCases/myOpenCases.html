@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="My Open Cases" icon-name="standard:case">
+        <lightning-datatable
+            key-field="Id"
+            data={cases}
+            columns={columns}
+            draft-values={draftValues}
+            onsave={handleSave}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </lightning-card>
+</template>
