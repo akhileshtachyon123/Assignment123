@@ -36,7 +36,7 @@ public class CaseBulksafeTriggerHandler
                 }
             }
 
-            //ONE SOQL QUERY
+            
             Map<Id, Account> accMap = new Map<Id, Account>(
                 [SELECT Id, Open_Case_Count__c FROM Account WHERE Id IN :accountIds]
             );
@@ -51,7 +51,7 @@ public class CaseBulksafeTriggerHandler
                 accountsToUpdate.add(acc);
             }
     
-            //ONE DML
+            
             if (!accountsToUpdate.isEmpty()) 
             {
                 update accountsToUpdate;
@@ -79,7 +79,7 @@ public class CaseBulksafeTriggerHandler
             }
         }
 
-              //SINGLE DML
+              
             if (!tasksToInsert.isEmpty()) 
             {
                 insert tasksToInsert;
