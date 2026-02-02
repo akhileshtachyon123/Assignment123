@@ -20,7 +20,8 @@ const COLUMNS = [
     { label: 'Created Date', fieldName: 'CreatedDate', type: 'date' }
 ];
 
-export default class MyOpenCases extends LightningElement {
+export default class MyOpenCases extends LightningElement 
+{
 
     columns = COLUMNS;
     @track draftValues = [];
@@ -28,21 +29,27 @@ export default class MyOpenCases extends LightningElement {
     wiredResult;
 
     @wire(getMyOpenCases)
-    wiredCases(result) {
+    wiredCases(result) 
+    {
         this.wiredResult = result;
-        if (result.data) {
+        if (result.data) 
+        {
             this.cases = result.data;
-        } else if (result.error) {
+        } 
+        else if (result.error) 
+        {
             this.showToast('Error', 'Failed to load cases', 'error');
         }
     }
 
-    async handleSave(event) {
+    async handleSave(event) 
+    {
         const records = event.detail.draftValues.map(draft => {
             return { fields: { ...draft } };
-        });
+       });
 
-        try {
+        try 
+        {
             await Promise.all(records.map(record => updateRecord(record)));
 
             this.showToast('Success', 'Cases updated successfully', 'success');
@@ -50,12 +57,15 @@ export default class MyOpenCases extends LightningElement {
             this.draftValues = [];
             await refreshApex(this.wiredResult);
 
-        } catch (error) {
+        } 
+        catch (error) 
+        {
             this.showToast('Error', error.body.message, 'error');
         }
     }
 
-    showToast(title, message, variant) {
+    showToast(title, message, variant) 
+    {
         this.dispatchEvent(
             new ShowToastEvent({
                 title,
