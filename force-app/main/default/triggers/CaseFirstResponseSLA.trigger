@@ -14,7 +14,6 @@ trigger CaseFirstResponseSLA on Case (before insert)
     for (Case c : Trigger.new) 
     {
 
-        // Set only if not already populated
         if (c.First_Response_Due__c == null) 
         {
             c.First_Response_Due__c = System.now().addHours(responseHours);
